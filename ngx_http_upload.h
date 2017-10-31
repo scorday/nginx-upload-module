@@ -5,23 +5,12 @@
 #ifndef _NGX_HTTP_UPLOAD_H_INCLUDED_
 #define _NGX_HTTP_UPLOAD_H_INCLUDED_
 
-#if (NGX_HAVE_OPENSSL_MD5_H)
-#include <openssl/md5.h>
-#else
-#include <md5.h>
-#endif
 
-#if (NGX_OPENSSL_MD5)
+#include <openssl/md5.h>
 #define  MD5Init    MD5_Init
 #define  MD5Update  MD5_Update
 #define  MD5Final   MD5_Final
-#endif
-
-#if (NGX_HAVE_OPENSSL_SHA1_H)
 #include <openssl/sha.h>
-#else
-#include <sha.h>
-#endif
 
 #define MULTIPART_FORM_DATA_STRING              "multipart/form-data"
 #define BOUNDARY_STRING                         "boundary="
